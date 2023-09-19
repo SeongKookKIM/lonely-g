@@ -39,6 +39,47 @@ body {
   .main-inner {
     width: 90%;
     min-width: 700px;
+    position: relative;
+    overflow: hidden;
+    &::after {
+      content: "";
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: -100%;
+      background-color: white;
+      transition: 1.5s;
+      animation: mainScroll-right 3s ease-in-out;
+    }
+    &::before {
+      content: "";
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: -100%;
+      background-color: white;
+      transition: 1.5s;
+      animation: mainScroll-left 3s ease-in-out;
+    }
+
+    @keyframes mainScroll-right {
+      0% {
+        right: 0;
+      }
+      100% {
+        right: -100%;
+      }
+    }
+    @keyframes mainScroll-left {
+      0% {
+        left: 0;
+      }
+      100% {
+        left: -100%;
+      }
+    }
     @include flexCenter();
     @include mobile {
       min-width: 400px;
@@ -163,7 +204,7 @@ body {
 
     background: url(../public/assets/quiz-bg.png) center right no-repeat;
     background-size: auto 100%;
-
+    pointer-events: none;
     strong {
       font-size: 72px;
       text-shadow: 0px 0px 3px #abc709;

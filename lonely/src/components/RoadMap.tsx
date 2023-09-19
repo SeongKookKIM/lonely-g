@@ -4,7 +4,7 @@ import Marquee from "react-fast-marquee";
 function RoadMap() {
   return (
     <div className="roadmap">
-      <Marquee className="raodmap-marquee">
+      <Marquee className="raodmap-marquee" gradient={true} gradientWidth={200}>
         <img src="/assets/road-map.png" alt="roadmap" />
         <img src="/assets/road-map.png" alt="roadmap" />
         <img src="/assets/road-map.png" alt="roadmap" />

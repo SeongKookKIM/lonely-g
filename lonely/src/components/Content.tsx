@@ -5,7 +5,9 @@ function Content() {
   return (
     <div className="content">
       <div className="content-marquee">
-        <Marquee>
+        <Marquee gradient={true} gradientWidth={200}>
+          <img src="/assets/our-loneliness.png" className="marquee-img" />
+          <img src="/assets/our-loneliness.png" className="marquee-img" />
           <img src="/assets/our-loneliness.png" className="marquee-img" />
         </Marquee>
         <ul>
