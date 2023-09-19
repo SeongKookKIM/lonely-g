@@ -107,6 +107,7 @@ body {
       color: #abc709;
       text-align: center;
       padding: 30px 50px;
+      text-shadow: -2px -2px 2px #abc709;
       @include tablet {
         .mobile {
           display: none;
