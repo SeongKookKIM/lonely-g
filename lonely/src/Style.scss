@@ -58,10 +58,10 @@ body {
   }
   .content-marquee {
     img.marquee-img {
-      height: 450px;
+      height: 350px;
       object-fit: cover;
       @include mobile {
-        height: 250px;
+        height: 200px;
       }
     }
   }
@@ -108,6 +108,7 @@ body {
       text-align: center;
       padding: 30px 50px;
       text-shadow: -2px -2px 2px #abc709;
+      pointer-events: none;
       @include tablet {
         .mobile {
           display: none;
@@ -133,6 +134,53 @@ body {
       }
       @include mobile {
         width: 300px;
+      }
+    }
+  }
+}
+
+.roadmap {
+  padding: 100px 0;
+
+  .raodmap-marquee {
+    img {
+      height: 250px;
+      object-fit: cover;
+      @include mobile {
+        height: 120px;
+      }
+    }
+  }
+  .roadmap-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    margin-top: 100px;
+    padding: 0 50px;
+
+    background: url(../public/assets/quiz-bg.png) center right no-repeat;
+    background-size: auto 100%;
+
+    strong {
+      font-size: 72px;
+      text-shadow: 0px 0px 3px #abc709;
+      @include mobile {
+        font-size: 68px;
+      }
+    }
+    p {
+      margin-top: 32px;
+      font-size: 45px;
+      font-weight: 700;
+      text-shadow: -2px -2px 2px #abc709;
+      @include mobile {
+        font-size: 25px;
+      }
+      span {
+        font-family: sans-serif;
       }
     }
   }

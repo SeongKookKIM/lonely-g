@@ -6,10 +6,7 @@ function Content() {
     <div className="content">
       <div className="content-marquee">
         <Marquee>
-          <img
-            src="/assets/OUR LONELINESS-marquee.png"
-            className="marquee-img"
-          />
+          <img src="/assets/our-loneliness.png" className="marquee-img" />
         </Marquee>
         <ul>
           <li>
