@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { FiX } from "react-icons/fi";
+import Form from "./Form";
 
 interface QuestionProps {
   question: boolean;
@@ -7,6 +8,8 @@ interface QuestionProps {
 }
 
 function Question({ question, setQuestion }: QuestionProps) {
+  const [showForm, setShowForm] = useState<boolean>(false);
+
   useEffect(() => {
     document.querySelector("body")?.classList.add("fixed");
 
@@ -29,7 +32,6 @@ function Question({ question, setQuestion }: QuestionProps) {
           }}
         />
         <strong>
-          {" "}
           What was the first cryptocurrency created based on blockchain
           technology?
         </strong>
@@ -57,6 +59,7 @@ function Question({ question, setQuestion }: QuestionProps) {
         </ul>
         <button type="button">answer</button>
       </div>
+      <Form />
     </div>
   );
 }
