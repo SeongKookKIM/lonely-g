@@ -358,6 +358,12 @@ body.fixed {
     flex-direction: column;
     gap: 50px;
     position: relative;
+
+    @include mobile {
+      width: 92%;
+      max-width: auto;
+      gap: 20px;
+    }
     .quiz-close {
       position: absolute;
       top: 20px;
@@ -365,6 +371,12 @@ body.fixed {
       width: 40px;
       height: 40px;
       cursor: pointer;
+      @include mobile {
+        width: 30px;
+        height: 30px;
+        top: 5px;
+        right: 5px;
+      }
     }
     strong {
       display: block;
@@ -372,18 +384,27 @@ body.fixed {
       padding-bottom: 10px;
       border-bottom: 2px solid lightgray;
       pointer-events: none;
+      @include mobile {
+        font-size: 28px;
+      }
     }
     ul {
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 20px;
+      @include mobile {
+        gap: 10px;
+      }
       li {
         display: flex;
         font-size: 33px;
         align-items: center;
         gap: 10px;
         pointer-events: none;
+        @include mobile {
+          font-size: 23px;
+        }
         span {
           font-family: sans-serif;
           padding-right: 5px;
@@ -407,6 +428,12 @@ body.fixed {
       border-radius: 10px;
       cursor: pointer;
       margin: 0 auto;
+      @include mobile {
+        font-size: 23px;
+        padding: 6px 13px;
+        width: 100px;
+        border-radius: 7px;
+      }
     }
   }
 }

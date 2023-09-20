@@ -20,13 +20,7 @@ function Question({ question, setQuestion }: QuestionProps) {
   }
   return (
     <div className="question">
-      <img
-        src="/assets/quiz/quiz-bg.png"
-        alt="question"
-        onClick={() => {
-          handlerFixed();
-        }}
-      />
+      <img src="/assets/quiz/quiz-bg.png" alt="question" />
       <div className="quiz-wrapper">
         <FiX
           className="quiz-close"
