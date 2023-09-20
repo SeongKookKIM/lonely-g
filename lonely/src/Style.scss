@@ -30,6 +30,7 @@ $font: "Glossy Sheen Shadow DEMO";
 }
 body {
   font-family: $font;
+  overflow-x: hidden;
 }
 
 .main {
@@ -222,6 +223,78 @@ body {
       }
       span {
         font-family: sans-serif;
+      }
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  @include flexCenter();
+  flex-direction: column;
+  gap: 100px;
+  padding: 100px 0;
+  @include mobile {
+    padding: 30px 0 100px;
+    gap: 40px;
+  }
+  .eth {
+    @include flexCenter();
+    flex-direction: column;
+    .eth-image {
+      padding-bottom: 30px;
+      @include tablet {
+        width: 150px;
+      }
+      @include mobile {
+        width: 80px;
+      }
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    p {
+      font-size: 102px;
+      text-align: center;
+      font-weight: bold;
+      line-height: 0.9;
+      text-shadow: 0px 0px 5px #abc709;
+      pointer-events: none;
+      @include tablet {
+        font-size: 72px;
+      }
+      @include mobile {
+        font-size: 52px;
+      }
+      span {
+        font-weight: 500;
+        font-family: sans-serif;
+      }
+    }
+  }
+  .footer-link {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 100px;
+    @include flexCenter();
+    flex-direction: column;
+    gap: 30px;
+    @include tablet {
+      padding: 0 50px;
+    }
+    @include mobile {
+      gap: 10px;
+    }
+    img {
+      width: 60%;
+      object-fit: cover;
+      cursor: pointer;
+      @include tablet {
+        width: 80%;
+      }
+      @include mobile {
+        width: 100%;
       }
     }
   }

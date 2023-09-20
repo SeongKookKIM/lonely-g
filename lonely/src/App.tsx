@@ -2,6 +2,7 @@ import React from "react";
 import Main from "./components/Main";
 import Content from "./components/Content";
 import RoadMap from "./components/RoadMap";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Main />
       <Content />
       <RoadMap />
+      <Footer />
     </div>
   );
 }
