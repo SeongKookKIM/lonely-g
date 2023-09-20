@@ -31,6 +31,36 @@ $font: "Glossy Sheen Shadow DEMO";
 body {
   font-family: $font;
   overflow-x: hidden;
+  height: auto;
+  overflow-y: visible;
+}
+body.fixed {
+  height: 100%;
+  overflow-y: hidden;
+}
+
+// Quiz
+.fixed-qa {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 10;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  @include tablet {
+    width: 65px;
+    height: 65px;
+  }
+  @include mobile {
+    width: 50px;
+    height: 50px;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
 }
 
 .main {
@@ -296,6 +326,87 @@ body {
       @include mobile {
         width: 100%;
       }
+    }
+  }
+}
+
+.question {
+  width: 100%;
+  height: 100vh;
+  z-index: 11;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  @include flexCenter();
+  background-color: white;
+
+  img {
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+  }
+  .quiz-wrapper {
+    width: 100%;
+    max-width: 750px;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    padding: 20px 30px;
+    border-radius: 15px;
+    border: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    position: relative;
+    .quiz-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+    }
+    strong {
+      display: block;
+      font-size: 42px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid lightgray;
+      pointer-events: none;
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      li {
+        display: flex;
+        font-size: 33px;
+        align-items: center;
+        gap: 10px;
+        pointer-events: none;
+        span {
+          font-family: sans-serif;
+          padding-right: 5px;
+          color: #333;
+        }
+        p {
+          font-weight: bold;
+        }
+      }
+    }
+    button {
+      display: block;
+      font-size: 30px;
+      padding: 10px 20px;
+      width: 200px;
+      font-weight: bold;
+      font-family: $font;
+      border: none;
+      outline: none;
+      background-color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 0 auto;
     }
   }
 }
