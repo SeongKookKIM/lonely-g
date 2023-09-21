@@ -1,8 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { FiX } from "react-icons/fi";
 
 function Form() {
   const [selectedAnswer, setSelectedAnswer] = useState<string>("");
+
+  const [formQuestion, setFormQuestion] = useState<string>(
+    "What was the first cryptocurrency created based on blockchain technology?"
+  );
+
+  const formRef = useRef<HTMLFormElement | null>(null);
 
   const handleAnswerChange = (e: any) => {
     const { name, value, checked } = e.target;
@@ -14,9 +21,36 @@ function Form() {
     }
   };
 
+  const hanlderEmail = (e: any) => {
+    e.preventDefault();
+
+    if (formRef.current) {
+      emailjs
+        .sendForm(
+          "service_zbgwd0t",
+          "template_po12o6n",
+          formRef.current,
+          "NRzBPAzFKAGVNQ48J"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+    }
+  };
+
   return (
     <div className="form">
-      <form>
+      <form
+        ref={formRef}
+        onSubmit={(e) => {
+          hanlderEmail(e);
+        }}
+      >
         <h3>
           ANSWER <FiX />
         </h3>
@@ -24,21 +58,17 @@ function Form() {
           <label>NAME</label>
           <input type="text" name="name"></input>
         </div>
+        <div className="email">
+          <label>E-MAIL</label>
+          <input type="email" name="email"></input>
+        </div>
         <div className="metamask-adress">
           <label>METAMASK ADRESS</label>
           <input type="text" name="adress"></input>
         </div>
         <div className="form-qa">
           <label>QUESTION</label>
-          <input
-            type="text"
-            name="q&a"
-            placeholder="What was the first cryptocurrency created based on blockchain
-          technology?"
-            value="What was the first cryptocurrency created based on blockchain
-          technology?"
-            disabled
-          ></input>
+          <input type="text" name="qa" value={formQuestion}></input>
         </div>
         <div className="form-answer">
           <label>ANSWER</label>
@@ -104,6 +134,9 @@ function Form() {
               <span>Cardano</span>
             </div>
           </div>
+        </div>
+        <div className="date">
+          <input name="date" type="text" style={{ display: "none" }}></input>
         </div>
         <button type="submit">SUBMIT</button>
       </form>
