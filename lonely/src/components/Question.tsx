@@ -57,9 +57,16 @@ function Question({ question, setQuestion }: QuestionProps) {
             <p>Cardano</p>
           </li>
         </ul>
-        <button type="button">answer</button>
+        <button
+          type="button"
+          onClick={() => {
+            setShowForm(true);
+          }}
+        >
+          answer
+        </button>
       </div>
-      <Form />
+      {showForm && <Form setShowForm={setShowForm} />}
     </div>
   );
 }

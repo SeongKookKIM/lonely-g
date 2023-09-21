@@ -2,7 +2,11 @@ import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { FiX } from "react-icons/fi";
 
-function Form() {
+interface FormProps {
+  setShowForm: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+function Form({ setShowForm }: FormProps) {
   const [selectedAnswer, setSelectedAnswer] = useState<string>("");
 
   const [formQuestion, setFormQuestion] = useState<string>(
@@ -34,10 +38,11 @@ function Form() {
         )
         .then(
           (result) => {
-            console.log(result.text);
+            console.log("Answer Suscess!");
+            window.location.reload();
           },
           (error) => {
-            console.log(error.text);
+            console.log("Answer Fail!");
           }
         );
     }
@@ -52,7 +57,12 @@ function Form() {
         }}
       >
         <h3>
-          ANSWER <FiX />
+          ANSWER{" "}
+          <FiX
+            onClick={() => {
+              setShowForm(false);
+            }}
+          />
         </h3>
         <div className="name">
           <label>NAME</label>
@@ -68,7 +78,7 @@ function Form() {
         </div>
         <div className="form-qa">
           <label>QUESTION</label>
-          <input type="text" name="qa" value={formQuestion}></input>
+          <input type="text" name="qa" defaultValue={formQuestion}></input>
         </div>
         <div className="form-answer">
           <label>ANSWER</label>
