@@ -78,7 +78,7 @@ function Form({ setShowForm }: FormProps) {
         </div>
         <div className="form-qa">
           <label>QUESTION</label>
-          <input type="text" name="qa" defaultValue={formQuestion}></input>
+          <textarea name="qa" defaultValue={formQuestion}></textarea>
         </div>
         <div className="form-answer">
           <label>ANSWER</label>

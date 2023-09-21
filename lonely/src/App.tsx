@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Main from "./components/Main";
 import Content from "./components/Content";
 import RoadMap from "./components/RoadMap";
@@ -7,6 +7,15 @@ import Question from "./components/Question";
 
 function App() {
   const [question, setQuestion] = useState<boolean>(false);
+
+  function setScreenSize() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  }
+  useEffect(() => {
+    setScreenSize();
+  });
+
   return (
     <div className="App">
       <Main />
