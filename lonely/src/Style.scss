@@ -227,7 +227,7 @@ body.fixed {
   }
 }
 .content {
-  padding: 100px 0;
+  padding: 250px 0;
   @include mobile {
     padding: 50px 0;
   }
@@ -299,6 +299,10 @@ body.fixed {
   .more {
     @include flexCenter();
     padding: 30px 0;
+    margin-top: 350px;
+    @include mobile {
+      margin-top: 150px;
+    }
 
     img {
       width: 500px;
@@ -315,7 +319,10 @@ body.fixed {
 }
 
 .roadmap {
-  padding: 100px 0;
+  padding: 250px 0;
+  @include mobile {
+    padding: 100px 0;
+  }
 
   .raodmap-marquee {
     img {
@@ -366,7 +373,7 @@ body.fixed {
   @include flexCenter();
   flex-direction: column;
   gap: 100px;
-  padding: 100px 0;
+  padding: 250px 0 100px;
   @include mobile {
     padding: 30px 0 100px;
     gap: 40px;
