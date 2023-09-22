@@ -2,6 +2,13 @@ import React from "react";
 import Marquee from "react-fast-marquee";
 
 function Content() {
+  const handlerScroll = () => {
+    const section = document.getElementById("footer");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="content">
       <div className="content-marquee">
@@ -38,7 +45,13 @@ function Content() {
           </p>
         </div>
         <div className="more">
-          <img src="/assets/IF YOU SEE MORE.png" alt="see more" />
+          <img
+            src="/assets/IF YOU SEE MORE.png"
+            alt="see more"
+            onClick={() => {
+              handlerScroll();
+            }}
+          />
         </div>
       </div>
     </div>

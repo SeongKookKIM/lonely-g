@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="footer">
+    <div className="footer" id="footer">
       <div className="eth">
         <div className="eth-image">
           <img src="/assets/ethereum02.png" alt="ethereum" />
